@@ -12,6 +12,7 @@ const Countries = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <h1>The countris: {country.length}</h1>
+      
     </div>
   );
 };
