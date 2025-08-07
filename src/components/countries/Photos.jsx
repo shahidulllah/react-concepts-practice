@@ -25,7 +25,7 @@ const Photos = () => {
       <h1 className="font-bold">
         Number Of Photos: <span className="font-normal"> {photos.length}</span>
       </h1>
-      <div>
+      <div className="grid md:grid-cols-4 grid-cols-2">
         {photos.slice(1, 10).map((photo) => (
           <PhotoCard key={photo.id} photo={photo} />
         ))}
