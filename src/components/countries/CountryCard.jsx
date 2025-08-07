@@ -1,6 +1,6 @@
 
-const CountryCard = ({country}) => {
-    console.log(country);
+const CountryCard = () => {
+   
     return (
         <div>
             
