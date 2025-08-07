@@ -1,6 +1,6 @@
 
 const CountryCard = ({country}) => {
-    const {name} = country;
+    console.log(country);
     return (
         <div>
             

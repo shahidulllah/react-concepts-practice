@@ -4,15 +4,23 @@ const Countries = () => {
   const [country, setCountry] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setCountry(data));
+    async function getCountries() {
+      try {
+        const response = await fetch(``);
+        const userData = await response.json();
+        setCountry(userData);
+        return
+      } catch (error) {
+        console.error("Error in getUserData:", error);
+        return null;
+      }
+    }
+    getCountries();
   }, []);
 
   return (
     <div className="max-w-7xl mx-auto">
       <h1>The countris: {country.length}</h1>
-      
     </div>
   );
 };
