@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
+import PhotoCard from "./PhotoCard";
 
 const Photos = () => {
-   const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     async function getPhotos() {
       try {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/photos`);
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/photos`
+        );
         const photosData = await response.json();
         return setPhotos(photosData);
-        
       } catch (error) {
         console.error("Error in getUserData:", error);
         return null;
@@ -20,10 +22,14 @@ const Photos = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <h1>The countris: {photos.length}</h1>
-      {
-        photos.map(photo => <Photos key={photo.id} photo={photo}/>)
-      }
+      <h1 className="font-bold">
+        Number Of Photos: <span className="font-normal"> {photos.length}</span>
+      </h1>
+      <div>
+        {photos.slice(1, 10).map((photo) => (
+          <PhotoCard key={photo.id} photo={photo} />
+        ))}
+      </div>
     </div>
   );
 };
