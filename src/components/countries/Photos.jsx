@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PhotoCard from "./PhotoCard";
+import { PhotoContext } from "../../main";
+
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
+  const nothing = useContext(PhotoContext)
+  console.log(nothing);
 
   useEffect(() => {
     async function getPhotos() {
