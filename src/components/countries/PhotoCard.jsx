@@ -1,5 +1,4 @@
 const PhotoCard = ({ photo }) => {
-  console.log(photo);
   return (
     <div>
       <img src={photo.thumbnailUrl} alt={photo.thumbnailUrl} />
