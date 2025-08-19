@@ -19,12 +19,18 @@ const LoginPage = () => {
             <form onSubmit={handleSubmit}>
               <fieldset className="fieldset">
                 <label className="label">Email</label>
-                <input type="email" className="input" placeholder="Email" />
+                <input
+                  type="email"
+                  name="email"
+                  className="input"
+                  placeholder="Email"
+                />
                 <label className="label">Password</label>
                 <input
                   type="password"
                   className="input"
                   placeholder="Password"
+                  name="password"
                 />
                 <div>
                   <a className="link link-hover">Forgot password?</a>
