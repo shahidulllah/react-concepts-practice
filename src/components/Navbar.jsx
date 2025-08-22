@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const navlinks = <div className="space-x-2">
+  const navlinks = <div className="space-x-4">
   <NavLink to={'/'}>Home</NavLink>
   <NavLink to={'/photo'}>Galleries</NavLink>
   </div>;
