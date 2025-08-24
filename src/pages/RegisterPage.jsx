@@ -12,8 +12,25 @@ const RegisterPage = () => {
     const password = e.target.password.value;
     console.log({ email, password, name });
 
-    createUser(email, password, name);
-    updateUser(name);
+    //createUser
+    createUser(email, password, name)
+      .then((result) => {
+        console.log(result.user);
+        alert("User created successfully!");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+
+    //update user
+    updateUser(name)
+      .then((result) => {
+        console.log(result.user);
+        alert("User name is also added..");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
   return (
     <div className="hero min-h-screen">
