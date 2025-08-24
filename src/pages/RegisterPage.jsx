@@ -1,6 +1,15 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+
 const RegisterPage = () => {
+  const { createUser } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    createUser(email, password);
   };
   return (
     <div className="hero min-h-screen">
@@ -18,9 +27,19 @@ const RegisterPage = () => {
             <form onSubmit={handleSubmit}>
               <fieldset className="fieldset">
                 <label className="label">Name</label>
-                <input type="text" className="input" name="name" placeholder="Email" />
+                <input
+                  type="text"
+                  className="input"
+                  name="name"
+                  placeholder="Email"
+                />
                 <label className="label">Email</label>
-                <input type="email" name="email" className="input" placeholder="Email" />
+                <input
+                  type="email"
+                  name="email"
+                  className="input"
+                  placeholder="Email"
+                />
                 <label className="label">Password</label>
                 <input
                   type="password"
