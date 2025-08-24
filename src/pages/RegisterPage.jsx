@@ -19,6 +19,7 @@ const RegisterPage = () => {
         alert("User created successfully!");
       })
       .catch((error) => {
+        console.log(error.message);
         alert(error.message);
       });
 
@@ -72,7 +73,7 @@ const RegisterPage = () => {
                   <a className="link link-hover">Forgot password?</a>
                 </div>
                 <button type="submit" className="btn btn-neutral mt-4">
-                  Login
+                  Register
                 </button>
               </fieldset>
             </form>

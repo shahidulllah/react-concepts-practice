@@ -4,6 +4,8 @@ const Navbar = () => {
   const navlinks = <div className="space-x-4">
   <NavLink to={'/'}>Home</NavLink>
   <NavLink to={'/photo'}>Galleries</NavLink>
+  <NavLink to={'/register'}>Register</NavLink>
+  <NavLink to={'/login'}>Login</NavLink>
   </div>;
   return (
     <div className="bg-base-100 shadow-sm">

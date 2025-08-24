@@ -9,7 +9,14 @@ const LoginPage = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    loginUser(email, password);
+    loginUser(email, password)
+    .then((result) => {
+        console.log(result.user);
+        alert("User logged in successfully!");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
     console.log(email, password);
   };
   return (
