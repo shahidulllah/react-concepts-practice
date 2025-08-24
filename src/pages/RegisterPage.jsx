@@ -2,14 +2,18 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const RegisterPage = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    console.log({ email, password, name });
 
-    createUser(email, password);
+    createUser(email, password, name);
+    updateUser(name);
   };
   return (
     <div className="hero min-h-screen">
