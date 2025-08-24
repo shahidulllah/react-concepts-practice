@@ -1,7 +1,10 @@
 const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form has been clicked");
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    console.log(email, password);
   };
   return (
     <div className="hero min-h-screen">
