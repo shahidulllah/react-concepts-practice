@@ -1,12 +1,26 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
-  const navlinks = <div className="space-x-4">
-  <NavLink to={'/'}>Home</NavLink>
-  <NavLink to={'/photo'}>Galleries</NavLink>
-  <NavLink to={'/register'}>Register</NavLink>
-  <NavLink to={'/login'}>Login</NavLink>
-  </div>;
+  const { user } = useContext(AuthContext);
+  console.log(user.email);
+
+  const navlinks = (
+    <div className="space-x-4">
+      <NavLink to={"/"}>Home</NavLink>
+      <NavLink to={"/photo"}>Galleries</NavLink>
+
+      {user & user?.email ? (
+        <NavLink to={"/logout"}>Logout</NavLink>
+      ) : (
+        <>
+          <NavLink to={"/login"}>login</NavLink>
+          <NavLink to={"/register"}>Register</NavLink>
+        </>
+      )}
+    </div>
+  );
   return (
     <div className="bg-base-100 shadow-sm">
       <div className="navbar max-w-7xl mx-auto">
@@ -15,7 +29,6 @@ const Navbar = () => {
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">{navlinks}</ul>
-          
         </div>
       </div>
     </div>
