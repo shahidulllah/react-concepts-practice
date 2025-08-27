@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const LoginPage = () => {
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, setUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,8 +10,9 @@ const LoginPage = () => {
     const password = e.target.password.value;
 
     loginUser(email, password)
-    .then((result) => {
+      .then((result) => {
         console.log(result.user);
+        setUser(result.user);
         alert("User logged in successfully!");
       })
       .catch((error) => {
