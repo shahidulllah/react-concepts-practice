@@ -15,7 +15,6 @@ const RegisterPage = () => {
     //createUser
     createUser(email, password, name)
       .then((result) => {
-        console.log(result.user);
         setUser(result.user);
         alert("User created successfully!");
       })

@@ -11,7 +11,6 @@ const LoginPage = () => {
 
     loginUser(email, password)
       .then((result) => {
-        console.log(result.user);
         setUser(result.user);
         alert("User logged in successfully!");
       })
