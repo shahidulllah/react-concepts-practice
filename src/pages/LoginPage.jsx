@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { googleLogin } from "../utils/googleLogin";
 
 const LoginPage = () => {
   const { loginUser, setUser } = useContext(AuthContext);
@@ -60,6 +61,7 @@ const LoginPage = () => {
                 </button>
               </fieldset>
             </form>
+            <button onClick={googleLogin} className="btn">Google Login</button>
           </div>
         </div>
       </div>

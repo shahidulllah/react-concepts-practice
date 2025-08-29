@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 
-const goggleProvider = GoogleAuthProvider();
+const goggleProvider = new GoogleAuthProvider();
 
 export function googleLogin() {
   signInWithPopup(auth, goggleProvider)
