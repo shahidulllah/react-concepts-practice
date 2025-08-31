@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const RegisterPage = () => {
-  const { createUser, updateUser, setUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ const RegisterPage = () => {
     //createUser
     createUser(email, password, name)
       .then((result) => {
-        setUser(result.user);
+        console.log(result.user);
         alert("User created successfully!");
       })
       .catch((error) => {

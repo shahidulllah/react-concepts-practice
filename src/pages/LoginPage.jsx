@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { googleLogin } from "../utils/googleLogin";
 
 const LoginPage = () => {
-  const { loginUser, setUser } = useContext(AuthContext);
+  const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const LoginPage = () => {
 
     loginUser(email, password)
       .then((result) => {
-        setUser(result.user);
+        console.log(result.user);
         alert("User logged in successfully!");
         navigate(`${location.state ? location.state : "/"}`);
       })
@@ -61,7 +61,9 @@ const LoginPage = () => {
                 </button>
               </fieldset>
             </form>
-            <button onClick={googleLogin} className="btn">Google Login</button>
+            <button onClick={googleLogin} className="btn">
+              Google Login
+            </button>
           </div>
         </div>
       </div>
