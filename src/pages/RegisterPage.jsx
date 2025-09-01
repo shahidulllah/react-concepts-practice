@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { googleLogin } from "../utils/googleLogin";
 
 const RegisterPage = () => {
   const { createUser, updateUser } = useContext(AuthContext);
@@ -76,6 +77,9 @@ const RegisterPage = () => {
                 </button>
               </fieldset>
             </form>
+            <button onClick={googleLogin} className="btn">
+              Google Login
+            </button>
           </div>
         </div>
       </div>
