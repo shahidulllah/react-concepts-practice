@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { googleLogin } from "../utils/googleLogin";
+import { useFormStatus } from "react-dom";
 
 const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const status = useFormStatus()
+  console.log(status);
 
   const handleSubmit = (e) => {
     e.preventDefault();
