@@ -1,10 +1,8 @@
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user.email);
+  const { user } = useAuth();
 
   const navlinks = (
     <div className="space-x-4">
