@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
-import { googleLogin } from "../utils/googleLogin";
 import { useFormStatus } from "react-dom";
+import GoggleLogin from "../utils/GoogleLogin";
 
 const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const status = useFormStatus()
+  const status = useFormStatus();
   console.log(status);
 
   const handleSubmit = (e) => {
@@ -19,7 +19,6 @@ const LoginPage = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
-        alert("User logged in successfully!");
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
@@ -64,9 +63,7 @@ const LoginPage = () => {
                 </button>
               </fieldset>
             </form>
-            <button onClick={googleLogin} className="btn">
-              Google Login
-            </button>
+            <GoggleLogin/>
           </div>
         </div>
       </div>
