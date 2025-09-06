@@ -48,13 +48,18 @@ const AuthProvider = ({ children }) => {
 
         axios
           .post("http://localhost:5000/jwt", user, { withCredentials: true })
-          .then((res) => console.log("login", res.data));
+          .then((res) => {
+            setLoading(false);
+            console.log("login", res.data);
+          });
       } else {
         axios
           .post("http://localhost:5000/logout", {}, { withCredentials: true })
-          .then((res) => console.log("logout:", res.data));
+          .then((res) => {
+            setLoading(false);
+            console.log("logout", res.data);
+          });
       }
-      setLoading(false);
     });
 
     return () => {
