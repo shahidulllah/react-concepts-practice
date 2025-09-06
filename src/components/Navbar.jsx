@@ -2,15 +2,20 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  console.log(user);
+
+  const handleLogout = () => {
+      logout()
+  }
 
   const navlinks = (
     <div className="space-x-4">
       <NavLink to={"/"}>Home</NavLink>
       <NavLink to={"/photo"}>Galleries</NavLink>
 
-      {user & user?.email ? (
-        <NavLink to={"/logout"}>Logout</NavLink>
+      {user && user?.email ? (
+        <button className="btn" onClick={handleLogout}>Logout</button>
       ) : (
         <>
           <NavLink to={"/login"}>login</NavLink>
