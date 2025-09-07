@@ -63,7 +63,7 @@ const LoginPage = () => {
                 </button>
               </fieldset>
             </form>
-            <GoggleLogin/>
+            <GoggleLogin />
           </div>
         </div>
       </div>

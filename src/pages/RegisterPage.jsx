@@ -77,7 +77,7 @@ const RegisterPage = () => {
                 </button>
               </fieldset>
             </form>
-            <GoggleLogin/>
+            <GoggleLogin />
           </div>
         </div>
       </div>
