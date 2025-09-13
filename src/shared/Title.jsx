@@ -1,7 +1,7 @@
 const Title = ({ title, description }) => {
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className="text-center py-4">
+      <h1 className="text-4xl">{title}</h1>
       <p>{description}</p>
     </div>
   );
