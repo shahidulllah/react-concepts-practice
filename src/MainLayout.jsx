@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Title from "./shared/Title";
 
 function App() {
   return (
@@ -6,16 +7,12 @@ function App() {
       <div>
         <Navbar />
         <div className=" max-w-7xl mx-auto">
-          <h1 className="font-bold text-4xl text-center my-5">
-            React Concepts Practice
-          </h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam in
-            possimus quis, magni illo repudiandae voluptatum veritatis
-            molestiae. Nisi non, quisquam mollitia dolorem cupiditate distinctio
-            aspernatur similique ad optio sint consequatur ut nostrum dolorum
-            nesciunt.
-          </p>
+          <Title
+            title={"Practice concepts of React"}
+            description={
+              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos maiores vero ipsam voluptas, rerum aperiam recusandae voluptate voluptatibus corporis, explicabo eveniet tempore impedit esse ad dolore optio totam ducimus tenetur asperiores. Unde, nobis id."
+            }
+          />
         </div>
       </div>
     </>
