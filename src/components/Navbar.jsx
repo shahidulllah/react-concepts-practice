@@ -25,7 +25,7 @@ const Navbar = () => {
     </div>
   );
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-black/30 fixed top-0 left-0 right-0 text-white shadow-xl">
       <div className="navbar max-w-7xl mx-auto">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">React Concepts</a>
