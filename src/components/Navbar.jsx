@@ -6,8 +6,8 @@ const Navbar = () => {
   console.log(user);
 
   const handleLogout = () => {
-      logout()
-  }
+    logout();
+  };
 
   const navlinks = (
     <div className="space-x-4">
@@ -15,7 +15,9 @@ const Navbar = () => {
       <NavLink to={"/photo"}>Galleries</NavLink>
 
       {user && user?.email ? (
-        <button className="btn" onClick={handleLogout}>Logout</button>
+        <button className="btn" onClick={handleLogout}>
+          Logout
+        </button>
       ) : (
         <>
           <NavLink to={"/login"}>login</NavLink>
