@@ -2,14 +2,22 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import GoggleLogin from "../utils/GoogleLogin";
+import { useForm } from "react-hook-form";
 
 const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
- 
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = (e) => {
+  
+
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -37,7 +45,7 @@ const LoginPage = () => {
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(handleFormSubmit)}>
               <fieldset className="fieldset">
                 <label className="label">Email</label>
                 <input
