@@ -27,7 +27,7 @@ const LoginPage = () => {
       .catch((error) => {
         console.log(error.message);
       });
-    console.log(data.email,data.password);
+    console.log(data);
   };
   return (
     <div className="hero min-h-screen">
