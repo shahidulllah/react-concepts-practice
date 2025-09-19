@@ -15,14 +15,11 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-  
+  console.log(watch("email"));
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+  const handleFormSubmit = (data) => {
 
-    loginUser(email, password)
+    loginUser(data.email, data.password)
       .then((result) => {
         console.log(result.user);
         navigate(`${location.state ? location.state : "/"}`);
@@ -30,7 +27,7 @@ const LoginPage = () => {
       .catch((error) => {
         console.log(error.message);
       });
-    console.log(email, password);
+    console.log(data.email,data.password);
   };
   return (
     <div className="hero min-h-screen">
@@ -50,16 +47,17 @@ const LoginPage = () => {
                 <label className="label">Email</label>
                 <input
                   type="email"
-                  name="email"
+                  {...register("email", { required: true })}
                   className="input"
                   placeholder="Email"
                 />
+                {errors.email && <span className="text-rose-600">Email field is required</span>}
                 <label className="label">Password</label>
                 <input
                   type="password"
                   className="input"
                   placeholder="Password"
-                  name="password"
+                  {...register("password")}
                 />
                 <div>
                   <a className="link link-hover">Forgot password?</a>
