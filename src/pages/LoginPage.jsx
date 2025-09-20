@@ -11,14 +11,11 @@ const LoginPage = () => {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm();
 
-  console.log(watch("email"));
-
   const handleFormSubmit = (data) => {
-
     loginUser(data.email, data.password)
       .then((result) => {
         console.log(result.user);
@@ -51,7 +48,9 @@ const LoginPage = () => {
                   className="input"
                   placeholder="Email"
                 />
-                {errors.email && <span className="text-rose-600">Email field is required</span>}
+                {errors.email && (
+                  <span className="text-rose-600">Email field is required</span>
+                )}
                 <label className="label">Password</label>
                 <input
                   type="password"
