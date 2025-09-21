@@ -32,15 +32,11 @@ const Footer = () => {
         <h6 className="footer-title">Explore</h6>
         <a className="link link-hover">Features</a>
         <a className="link link-hover">Enterprise</a>
-        <a className="link link-hover">Security</a>
-        <a className="link link-hover">Pricing</a>
       </nav>
       <nav>
         <h6 className="footer-title">Apps</h6>
         <a className="link link-hover">Mac</a>
         <a className="link link-hover">Windows</a>
-        <a className="link link-hover">iPhone</a>
-        <a className="link link-hover">Android</a>
       </nav>
     </footer>
   );
