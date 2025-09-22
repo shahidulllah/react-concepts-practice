@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import GoggleLogin from "../utils/GoogleLogin";
+import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
   const { createUser, updateUser } = useContext(AuthContext);
+  const {handleSubmit, register}=useForm()
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
     const name = e.target.name.value;
@@ -46,13 +48,13 @@ const RegisterPage = () => {
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(handleFormSubmit)}>
               <fieldset className="fieldset">
                 <label className="label">Name</label>
                 <input
                   type="text"
                   className="input"
-                  name="name"
+                  {...register('email', {required: true})}
                   placeholder="Email"
                 />
                 <label className="label">Email</label>
