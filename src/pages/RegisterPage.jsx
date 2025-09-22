@@ -7,13 +7,10 @@ const RegisterPage = () => {
   const { createUser, updateUser } = useContext(AuthContext);
   const { handleSubmit, register } = useForm();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
+  const handleFormSubmit = (data) => {
+    const name = data.name;
+    const email = data.email;
+    const password = data.password;
     //createUser
     createUser(email, password, name)
       .then((result) => {
