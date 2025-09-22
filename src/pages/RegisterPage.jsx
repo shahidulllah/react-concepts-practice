@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
   const { createUser, updateUser } = useContext(AuthContext);
-  const {handleSubmit, register}=useForm()
+  const { handleSubmit, register } = useForm();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -54,13 +54,13 @@ const RegisterPage = () => {
                 <input
                   type="text"
                   className="input"
-                  {...register('email', {required: true})}
-                  placeholder="Email"
+                  {...register("name", { required: true })}
+                  placeholder="Name"
                 />
                 <label className="label">Email</label>
                 <input
                   type="email"
-                  name="email"
+                  {...register("email", { required: true })}
                   className="input"
                   placeholder="Email"
                 />
@@ -69,7 +69,7 @@ const RegisterPage = () => {
                   type="password"
                   className="input"
                   placeholder="Password"
-                  name="password"
+                  {...register("Password", { required: true })}
                 />
                 <div>
                   <a className="link link-hover">Forgot password?</a>
