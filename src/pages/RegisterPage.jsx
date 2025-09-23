@@ -18,7 +18,6 @@ const RegisterPage = () => {
         alert("User created successfully!");
       })
       .catch((error) => {
-        console.log(error.message);
         alert(error.message);
       });
 
