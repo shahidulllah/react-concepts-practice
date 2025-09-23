@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
   const { createUser, updateUser } = useContext(AuthContext);
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, errors } = useForm();
 
   const handleFormSubmit = (data) => {
     const name = data.name;
@@ -60,6 +60,9 @@ const RegisterPage = () => {
                   className="input"
                   placeholder="Email"
                 />
+                {errors.email && (
+                  <span className="text-rose-600">Email field is required</span>
+                )}
                 <label className="label">Password</label>
                 <input
                   type="password"
