@@ -8,6 +8,7 @@ const goggleProvider = new GoogleAuthProvider();
 const GoggleLogin = () => {
   const navigate = useNavigate();
 
+  //Google login func
   const handleGoggleLogin = () => {
     signInWithPopup(auth, goggleProvider)
       .then((result) => {
