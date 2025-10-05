@@ -20,3 +20,4 @@ export const counterSlice = createSlice({
 });
 
 export const counterReducer = counterSlice.reducer;
+export const { increment, decrement, incrementByValue } = counterSlice.actions;
