@@ -9,8 +9,8 @@ import { store } from "./redux/store.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider>
-      <AuthProvider store={store}>
+    <Provider store={store}>
+      <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>
     </Provider>
