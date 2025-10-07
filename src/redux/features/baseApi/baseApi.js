@@ -7,9 +7,13 @@ export const baseApi = createApi({
     getPosts: builder.query({
       query: () => "",
     }),
-    // setPosts: builder.mutation({
-    //     query: 
-    // })
+    setPosts: builder.mutation({
+      query: () => ({
+        url: "",
+        method: "POST",
+        body: "",
+      }),
+    }),
   }),
 });
 
