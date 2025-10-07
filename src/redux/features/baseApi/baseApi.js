@@ -9,3 +9,5 @@ export const baseApi = createApi({
     }),
   }),
 });
+
+export const { useGetPostsQuery } = baseApi;
