@@ -17,4 +17,4 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useGetPostsQuery } = baseApi;
+export const { useGetPostsQuery, useSetPostsMutation } = baseApi;
