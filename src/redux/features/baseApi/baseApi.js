@@ -7,6 +7,9 @@ export const baseApi = createApi({
     getPosts: builder.query({
       query: () => "",
     }),
+    // setPosts: builder.mutation({
+    //     query: 
+    // })
   }),
 });
 
