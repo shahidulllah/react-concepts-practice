@@ -1,4 +1,4 @@
-import { baseApi } from "../baseApi/baseApi";
+import { baseApi } from "./baseApi";
 
 const counterApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

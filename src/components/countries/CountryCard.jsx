@@ -1,4 +1,4 @@
-import { useGetPostsQuery } from "../../redux/features/baseApi/baseApi";
+import { useGetPostsQuery } from "../../redux/features/api/baseApi";
 
 const CountryCard = () => {
   const { data } = useGetPostsQuery();
