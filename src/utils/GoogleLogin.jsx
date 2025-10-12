@@ -23,7 +23,7 @@ const GoggleLogin = () => {
       });
   };
   return (
-    <button onClick={handleGoggleLogin} className="btn">
+    <button onClick={handleGoggleLogin} className="btn btn-circle">
       Google Login
     </button>
   );
