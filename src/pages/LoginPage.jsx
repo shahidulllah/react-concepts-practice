@@ -19,7 +19,6 @@ const LoginPage = () => {
   const handleFormSubmit = (data) => {
     loginUser(data.email, data.password)
       .then((result) => {
-        console.log(result.user);
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
